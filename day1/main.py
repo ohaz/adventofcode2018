@@ -2,12 +2,7 @@ import itertools
 
 
 def part1(p1_changes):
-    frequency = 0
-
-    for change in p1_changes:
-        frequency += change
-
-    return frequency
+    return sum(p1_changes)
 
 
 def part2(p2_changes):
