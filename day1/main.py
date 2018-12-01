@@ -7,7 +7,7 @@ def part1(p1_changes):
 
 def part2(p2_changes):
     frequency = 0
-    old_frequencies = [0]
+    old_frequencies = set([0])
     duplicate = None
 
     for change in itertools.cycle(p2_changes):
@@ -15,7 +15,7 @@ def part2(p2_changes):
         if frequency in old_frequencies:
             duplicate = frequency
             break
-        old_frequencies.append(frequency)
+        old_frequencies.add(frequency)
     return duplicate
 
 
