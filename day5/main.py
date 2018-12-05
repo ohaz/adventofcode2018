@@ -1,4 +1,15 @@
 import string
+from copy import copy
+
+
+def part2(line):
+    killers = string.ascii_uppercase
+    shortest = len(line)
+    for killer in killers:
+        newline = line.replace(killer, '').replace(killer.lower(), '')
+        newlen = part1(newline)
+        shortest = min(shortest, newlen)
+    return shortest
 
 
 def part1(line):
@@ -19,4 +30,5 @@ def part1(line):
 with open('input.txt', 'r') as input_file:
     input_line = input_file.readline()
 
-print(part1(input_line))
+print(part1(copy(input_line)))
+print(part2(copy(input_line)))
